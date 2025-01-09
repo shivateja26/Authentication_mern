@@ -1,7 +1,6 @@
-import { type } from "@testing-library/user-event/dist/type";
 import mongoose from "mongoose";
 
-const userSchema = new mangoose.Schema({
+const userSchema = new mongoose.Schema({
     email:{
     type:String,
     required:true,
@@ -26,9 +25,11 @@ isVerified:{
 
 resetPasswordToken :String,
 resetPasswordExpiresAt:Date,
-verificaionToken:String,
-verificaionTokenExpiresAt:Date,
+verificationToken:String,
+verificationTokenExpiresAt:Date,
 
 
 
 },{timestamps:true});
+
+export const User = mongoose.model('User',userSchema);
