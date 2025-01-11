@@ -23,6 +23,8 @@ export const signup = async (req,res)=>{
 
         })
         await user.save();
+        //jwt
+        generateTokenAndSetCookie(res,user.id)
     }
     catch(error){
         res.status(400).json({succses:false,message:error.message});
